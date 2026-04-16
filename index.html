@@ -77,6 +77,13 @@
       font-size: 0.85rem !important;
     }
 
+    .menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--rose-dark);
+}
+
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -625,12 +632,28 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      .hero-content { grid-template-columns: 1fr; gap: 2rem; }
-      .hero-img-wrap { order: -1; }
-      .hero-badge { bottom: 10px; left: 10px; }
-      .form-row { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-    }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
 
     /* MODAL CONFIRMATION */
     .modal-overlay {
@@ -755,6 +778,7 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo">FULANI'S</div>
+    <div class="menu-toggle">☰</div>
     <ul class="nav-links">
       <li><a href="#nos-box">Nos box</a></li>
       <li><a href="#comment">Comment ça marche</a></li>
@@ -813,7 +837,7 @@ Clique sur “Commander” et choisis ta box.</p>
       <!-- Box 1 -->
       <div class="produit-card">
         <div class="produit-img">
-          <img src="images/box1.jpeg" alt="Box Classique">
+          <img src="images/box1.jpeg" alt="Mini Brunch">
           <span class="produit-badge">Bestseller</span>
         </div>
         <div class="produit-body">
@@ -829,7 +853,7 @@ Clique sur “Commander” et choisis ta box.</p>
       <!-- Box 2 -->
       <div class="produit-card">
         <div class="produit-img">
-          <img src="images/box2.jpeg" alt="Box Gourmande">
+          <img src="images/box2.jpeg" alt="Brunch Classique">
           <span class="produit-badge">Nouveau</span>
         </div>
         <div class="produit-body">
@@ -845,7 +869,7 @@ Clique sur “Commander” et choisis ta box.</p>
       <!-- Box 3 -->
       <div class="produit-card">
         <div class="produit-img">
-          <img src="images/box3.jpeg" alt="Box Duo">
+          <img src="images/box3.jpeg" alt="Deluxe Brunch">
         </div>
         <div class="produit-body">
           <h3 class="produit-nom">Deluxe Brunch</h3>
@@ -1091,6 +1115,15 @@ Clique sur “Commander” et choisis ta box.</p>
     // Lancer au chargement
     document.addEventListener('DOMContentLoaded', initPage);
   </script>
+
+  <script>
+const toggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+</script>
 
 </body>
 </html>
