@@ -77,22 +77,15 @@
       font-size: 0.85rem !important;
     }
 
-    .menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: var(--rose-dark);
-}
-
     /* HERO */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 80px 2rem 3rem;
-      position: relative;
-      overflow: hidden;
-    }
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  padding: 100px 2rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
 
     .hero::before {
       content: '';
@@ -113,15 +106,15 @@
     }
 
     .hero-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
 
     .hero-tag {
       display: inline-block;
@@ -202,21 +195,23 @@
     }
 
     .hero-img-main {
-      width: 100%;
-      aspect-ratio: 4/5;
-      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-      border-radius: 2rem 0.5rem 2rem 0.5rem;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  width: 100%;
+  min-height: 380px;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+  border-radius: 2rem 0.5rem 2rem 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .hero-img-main img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.hero-img-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
     .img-placeholder {
       text-align: center;
@@ -632,28 +627,12 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: white;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-}
+      .hero-content { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-img-wrap { order: -1; }
+      .hero-badge { bottom: 10px; left: 10px; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
 
     /* MODAL CONFIRMATION */
     .modal-overlay {
@@ -759,6 +738,10 @@
       font-weight: 500;
       margin-bottom: 1.5rem;
     }
+    /* FIX GLOBAL IMAGES */
+img {
+  max-width: 100%;
+}
 
   </style>
 </head>
@@ -778,7 +761,6 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo">FULANI'S</div>
-    <div class="menu-toggle">☰</div>
     <ul class="nav-links">
       <li><a href="#nos-box">Nos box</a></li>
       <li><a href="#comment">Comment ça marche</a></li>
@@ -1115,14 +1097,13 @@ Clique sur “Commander” et choisis ta box.</p>
     // Lancer au chargement
     document.addEventListener('DOMContentLoaded', initPage);
   </script>
-
   <script>
-const toggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+  const toggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-toggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 </script>
 
 </body>
