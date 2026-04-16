@@ -760,6 +760,46 @@
       margin-bottom: 1.5rem;
     }
 
+    /* ===== FIX MOBILE RESPONSIVE ===== */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 100px 1rem 3rem;
+  }
+
+  nav {
+    padding: 0 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .produits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+}
+
   </style>
 </head>
 <body>
@@ -853,7 +893,7 @@ Clique sur “Commander” et choisis ta box.</p>
       <!-- Box 2 -->
       <div class="produit-card">
         <div class="produit-img">
-          <img src="images/box2.jpeg" alt="Brunch Classique">
+          <img src="images/Box2.jpeg" alt="Brunch Classique">
           <span class="produit-badge">Nouveau</span>
         </div>
         <div class="produit-body">
@@ -869,7 +909,7 @@ Clique sur “Commander” et choisis ta box.</p>
       <!-- Box 3 -->
       <div class="produit-card">
         <div class="produit-img">
-          <img src="images/box3.jpeg" alt="Deluxe Brunch">
+          <img src="images/Box3.jpeg" alt="Deluxe Brunch">
         </div>
         <div class="produit-body">
           <h3 class="produit-nom">Deluxe Brunch</h3>
