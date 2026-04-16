@@ -104,13 +104,13 @@
 
     /* HERO */
     .hero {
-  min-height: calc(100vh - 64px);
-  display: flex;
-  align-items: center;
-  padding: 100px 2rem 3rem;
-  position: relative;
-  overflow: hidden;
-}
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
 
     .hero::before {
       content: '';
@@ -131,15 +131,15 @@
     }
 
     .hero-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
 
     .hero-tag {
       display: inline-block;
@@ -220,23 +220,21 @@
     }
 
     .hero-img-main {
-  width: 100%;
-  min-height: 380px;
-  aspect-ratio: 4/5;
-  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-  border-radius: 2rem 0.5rem 2rem 0.5rem;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      border-radius: 2rem 0.5rem 2rem 0.5rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.hero-img-main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    .hero-img-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     .img-placeholder {
       text-align: center;
@@ -763,10 +761,6 @@
       font-weight: 500;
       margin-bottom: 1.5rem;
     }
-    /* FIX GLOBAL IMAGES */
-img {
-  max-width: 100%;
-}
 
   </style>
 </head>
@@ -845,7 +839,7 @@ Clique sur “Commander” et choisis ta box.</p>
       <!-- Box 1 -->
       <div class="produit-card">
         <div class="produit-img">
-          <img src="images/box1.jpeg" alt="Mini Brunch">
+          <img src="images/box1.jpeg" alt="Box Classique">
           <span class="produit-badge">Bestseller</span>
         </div>
         <div class="produit-body">
@@ -861,7 +855,7 @@ Clique sur “Commander” et choisis ta box.</p>
       <!-- Box 2 -->
       <div class="produit-card">
         <div class="produit-img">
-          <img src="images/box2.jpeg" alt="Brunch Classique">
+          <img src="images/box2.jpeg" alt="Box Gourmande">
           <span class="produit-badge">Nouveau</span>
         </div>
         <div class="produit-body">
@@ -877,7 +871,7 @@ Clique sur “Commander” et choisis ta box.</p>
       <!-- Box 3 -->
       <div class="produit-card">
         <div class="produit-img">
-          <img src="images/box3.jpeg" alt="Deluxe Brunch">
+          <img src="images/box3.jpeg" alt="Box Duo">
         </div>
         <div class="produit-body">
           <h3 class="produit-nom">Deluxe Brunch</h3>
@@ -889,24 +883,25 @@ Clique sur “Commander” et choisis ta box.</p>
         </div>
       </div>
 
-     <!-- Box 4 -->
-<div class="produit-card">
-  <div class="produit-img">
-    <img src="images/box4.jpeg" alt="Box Solo">
-    <span class="produit-badge">Spécial</span>
-  </div>
+      <!-- Box 4 -->
+      <div class="produit-card">
+        <div class="produit-img">
+          <img src="images/box4.jpeg" alt="Box Solo">
+          </div>
+          <span class="produit-badge">Spécial</span>
+        </div>
+        <div class="produit-body">
+          <h3 class="produit-nom">Box Solo</h3>
+          <p class="produit-desc">Une box gourmande parfaite pour un brunch en solo, une petite attention à s’offrir ou à offrir idéale pour une pause plaisir à tout moment de la journée. </p>
+          <div class="produit-footer">
+            <div class="produit-prix">3 000 <span>FCFA</span></div>
+            <a href="#commander" class="btn-commander">Demander</a>
+          </div>
+        </div>
+      </div>
 
-  <div class="produit-body">
-    <h3 class="produit-nom">Box Solo</h3>
-    <p class="produit-desc">
-      Une box gourmande parfaite pour un brunch en solo, une petite attention à s’offrir ou à offrir idéale pour une pause plaisir à tout moment de la journée.
-    </p>
-    <div class="produit-footer">
-      <div class="produit-prix">3 000 <span>FCFA</span></div>
-      <a href="#commander" class="btn-commander">Demander</a>
     </div>
   </div>
-</div>
 
   <!-- COMMENT ÇA MARCHE -->
   <section class="steps-section" id="comment">
